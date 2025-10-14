@@ -1,5 +1,10 @@
 enablePlugins(SbtWeb)
-Assets / pipelineStages := Seq(scalaJSPipeline)
-Compile / compile       := ((Compile / compile) dependsOn scalaJSPipeline).value
+
+libraryDependencies ++= libScalax.`http4s-Release-ember-client`.value
+libraryDependencies ++= libScalax.`http4s-Release-ember-server`.value
+libraryDependencies ++= libScalax.`http4s-Release-dsl`.value
+libraryDependencies ++= libScalax.`http4s-Release-circe`.value
+
+Compile / run / fork := true
 
 scalafmtOnCompile := true
