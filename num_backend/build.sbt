@@ -1,5 +1,3 @@
-enablePlugins(SbtWeb)
-
 libraryDependencies ++= libScalax.`http4s-Release-ember-client`.value
 libraryDependencies ++= libScalax.`http4s-Release-ember-server`.value
 libraryDependencies ++= libScalax.`http4s-Release-dsl`.value
