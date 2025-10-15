@@ -1,10 +1,23 @@
+package confirm.num.frontend
+
 import scala.scalajs.js.annotation.JSExportTopLevel
 
-object CodegenJavascript {
+import com.yang_bo.html.*
+import com.thoughtworks.binding.Binding
+import com.thoughtworks.binding.Binding.Var
+import org.scalajs.dom.HTMLSpanElement
 
-  @JSExportTopLevel("initCodegen")
-  def initCodegen(): Int = {
-    2
+object BindingApp {
+  val color = Var("brown")
+
+  def animal = "dog"
+
+  val span: Binding.Stable[HTMLSpanElement] = {
+    html"""<span>The quick ${color.bind} fox jumps&nbsp;over the lazy ${animal}</span>"""
   }
 
+  def renderAction = {
+    import org.scalajs.dom.document
+    render(document.body, span)
+  }
 }
