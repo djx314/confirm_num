@@ -9,8 +9,9 @@ frontend.js / scalaVersion  := scalaV.v3
 frontend.jvm / scalaVersion := scalaV.v3
 backend / scalaVersion      := scalaV.v3
 
-frontend.js / version  := "1.0"
-frontend.jvm / version := "1.0"
+val `frontend.version` = "1.0"
+frontend.js / version  := `frontend.version`
+frontend.jvm / version := `frontend.version`
 
 addCommandAlias("r1", "; backend/fgRun;")
 addCommandAlias("s1", "; backend/bgStop;")

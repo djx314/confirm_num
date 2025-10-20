@@ -16,8 +16,9 @@ object BindingApp {
     html"""<span>The quick ${color.bind} fox jumps&nbsp;over the lazy ${animal}</span>"""
   }
 
-  def renderAction = {
+  @JSExportTopLevel("renderAction")
+  def renderAction() = {
     import org.scalajs.dom.document
-    render(document.body, span)
+    render(document.getElementById("miao-main"), span)
   }
 }
