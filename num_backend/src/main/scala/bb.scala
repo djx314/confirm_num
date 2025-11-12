@@ -23,7 +23,7 @@ object Main extends IOApp {
 
   val routes: HttpRoutes[IO] = helloWorldService <+> webjars2
 
-  def run(args: List[String]): IO[ExitCode] = EmberServerBuilder
+  override def run(args: List[String]): IO[ExitCode] = EmberServerBuilder
     .default[IO]
     .withHost(ipv4"0.0.0.0")
     .withPort(port"8080")
